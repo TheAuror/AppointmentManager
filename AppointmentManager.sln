@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentManager", "AppointmentManager\AppointmentManager.csproj", "{41814112-C502-4533-9850-B1AFA7ACE0EF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentManager.PresentationLayer", "AppointmentManager\AppointmentManager.PresentationLayer.csproj", "{41814112-C502-4533-9850-B1AFA7ACE0EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentManager.DataLayer", "AppointmentManager.DataLayer\AppointmentManager.DataLayer.csproj", "{60554BB1-FD10-4FEE-933E-2AC98F65047E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentManager.BusinessLayer", "AppointmentManager.BusinessLayer\AppointmentManager.BusinessLayer.csproj", "{61CC1788-DAE2-4580-B238-97BC964A8556}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{41814112-C502-4533-9850-B1AFA7ACE0EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41814112-C502-4533-9850-B1AFA7ACE0EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41814112-C502-4533-9850-B1AFA7ACE0EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60554BB1-FD10-4FEE-933E-2AC98F65047E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60554BB1-FD10-4FEE-933E-2AC98F65047E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60554BB1-FD10-4FEE-933E-2AC98F65047E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60554BB1-FD10-4FEE-933E-2AC98F65047E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61CC1788-DAE2-4580-B238-97BC964A8556}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61CC1788-DAE2-4580-B238-97BC964A8556}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61CC1788-DAE2-4580-B238-97BC964A8556}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61CC1788-DAE2-4580-B238-97BC964A8556}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

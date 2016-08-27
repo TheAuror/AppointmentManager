@@ -1,6 +1,6 @@
-﻿namespace AppointmentManager
+﻿namespace AppointmentManager.PresentationLayer
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
