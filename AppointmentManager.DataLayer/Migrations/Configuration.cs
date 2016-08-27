@@ -5,14 +5,14 @@ namespace AppointmentManager.DataLayer.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<AppointmentManager.DataLayer.Context>
+    internal sealed class Configuration : DbMigrationsConfiguration<AppointmentManager.DataLayer.SampleContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(AppointmentManager.DataLayer.Context context)
+        protected override void Seed(AppointmentManager.DataLayer.SampleContext context)
         {
             //  This method will be called after migrating to the latest version.
 

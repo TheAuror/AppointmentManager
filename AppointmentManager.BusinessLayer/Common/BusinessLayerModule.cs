@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AppointmentManager.DataLayer;
+using Autofac;
 
 namespace AppointmentManager.BusinessLayer.Common
 {
-    public class BusinessLayerModule
+    public class BusinessLayerModule : Module
     {
-
+        protected override void Load(ContainerBuilder builder)
+        {
+            builder.RegisterAssemblyModules(
+                typeof (ISampleContext).Assembly);
+        }
     }
 }

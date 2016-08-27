@@ -4,9 +4,9 @@ namespace AppointmentManager.BusinessLayer.Common
 {
     public class BaseService
     {
-        protected readonly IContext Context;
+        protected readonly ISampleContext Context;
 
-        public BaseService(IContext context)
+        public BaseService(ISampleContext context)
         {
             Context = context;
         }

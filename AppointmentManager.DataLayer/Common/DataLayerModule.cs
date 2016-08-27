@@ -1,5 +1,4 @@
 ﻿using Autofac;
-using Autofac.Core;
 
 namespace AppointmentManager.DataLayer.Common
 {
@@ -7,8 +6,8 @@ namespace AppointmentManager.DataLayer.Common
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<Context>()
-                .As<IContext>()
+            builder.RegisterType<SampleContext>()
+                .As<ISampleContext>()
                 .WithParameter("connectionString", "AppointmentManager")
                 .InstancePerLifetimeScope();
         }

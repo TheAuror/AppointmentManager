@@ -8,13 +8,13 @@ using AppointmentManager.DataLayer.Entities;
 
 namespace AppointmentManager.DataLayer
 {
-    public class Context : DbContext, IContext
+    public class SampleContext : DbContext, ISampleContext
     {
-        public Context():this("AppointmentManager")
+        public SampleContext():this("AppointmentManager")
         {
 
         }
-        public Context(string connectionString) 
+        public SampleContext(string connectionString) 
             : base(connectionString)
         {
 

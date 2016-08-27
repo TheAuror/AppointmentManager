@@ -44,7 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Common\BaseModel.cs" />
     <Compile Include="Common\BaseService.cs" />
     <Compile Include="Common\BusinessLayerModule.cs" />
