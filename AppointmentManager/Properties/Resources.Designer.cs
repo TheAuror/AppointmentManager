@@ -104,5 +104,14 @@ namespace AppointmentManager.PresentationLayer.Properties {
                 return ResourceManager.GetString("MainForm_OpenFileDialog_CsvFilter", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sikeres beolvasás.
+        /// </summary>
+        internal static string MainForm_ReadFromFile_SuccesfulReading_MessageBoxText {
+            get {
+                return ResourceManager.GetString("MainForm_ReadFromFile_SuccesfulReading_MessageBoxText", resourceCulture);
+            }
+        }
     }
 }

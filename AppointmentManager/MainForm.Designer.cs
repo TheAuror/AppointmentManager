@@ -59,6 +59,7 @@
             this.hallgatókListájaToolStripMenuItem.Name = "hallgatókListájaToolStripMenuItem";
             this.hallgatókListájaToolStripMenuItem.Size = new System.Drawing.Size(103, 20);
             this.hallgatókListájaToolStripMenuItem.Text = "Hallgatók listája";
+            this.hallgatókListájaToolStripMenuItem.Click += new System.EventHandler(this.hallgatókListájaToolStripMenuItem_Click);
             // 
             // időpontFoglalásokToolStripMenuItem
             // 

@@ -1,5 +1,6 @@
 ﻿using System.Windows.Forms;
 using AppointmentManager.BusinessLayer.StudentModels;
+using AppointmentManager.PresentationLayer.mdiChildForms.StudentListView;
 using AppointmentManager.PresentationLayer.Properties;
 using Autofac;
 
@@ -27,7 +28,7 @@ namespace AppointmentManager.PresentationLayer
             }
         }
 
-        private void hallgatókBeolvasásaToolStripMenuItem_Click(object sender, System.EventArgs e)
+        private async void hallgatókBeolvasásaToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
@@ -36,12 +37,20 @@ namespace AppointmentManager.PresentationLayer
                 openFileDialog.Filter = Resources.MainForm_OpenFileDialog_CsvFilter;
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    _studentService.LoadAndSaveStudentsFromFileAsync(openFileDialog.FileName);
+                    if (await _studentService.LoadAndSaveStudentsFromFileAsync(openFileDialog.FileName))
+                        MessageBox.Show(Resources.MainForm_ReadFromFile_SuccesfulReading_MessageBoxText);
                 }
-                else
-                {
-                    return;
-                }
+            }
+        }
+
+        private void hallgatókListájaToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            using (var lifetimeScope = Program.Container.BeginLifetimeScope())
+            {
+                var form = lifetimeScope.ResolveNamed<Form>("StudentListForm");
+                form.MdiParent = this;
+                form.WindowState = FormWindowState.Maximized;
+                form.Show();
             }
         }
     }

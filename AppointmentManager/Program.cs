@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using Autofac;
 using AppointmentManager.BusinessLayer.StudentModels;
+using AppointmentManager.PresentationLayer.mdiChildForms.StudentListView;
 using Autofac.Core;
 
 namespace AppointmentManager.PresentationLayer
@@ -16,6 +17,8 @@ namespace AppointmentManager.PresentationLayer
 
             builder.RegisterAssemblyModules(typeof(IStudentService).Assembly);
             builder.Register(context => new MainForm(context.Resolve<IStudentService>())).Named<Form>("MainForm").SingleInstance();
+            builder.RegisterType<StudentListViewModel>().AsSelf().InstancePerLifetimeScope();
+            builder.Register(context => new StudentListForm(context.Resolve<StudentListViewModel>())).Named<Form>("StudentListForm").SingleInstance();
             builder.RegisterType<LoginForm>().AsSelf().InstancePerLifetimeScope();
 
             Container = builder.Build();

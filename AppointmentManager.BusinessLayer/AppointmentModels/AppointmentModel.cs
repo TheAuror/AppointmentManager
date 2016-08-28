@@ -16,6 +16,8 @@ namespace AppointmentManager.BusinessLayer.AppointmentModels
         private string _studentCourse;
         private DateTime _appointment;
 
+        public AppointmentModel() { }
+
         public AppointmentModel(AppointmentEntity appointmentEntity)
         {
             _id = appointmentEntity.Id;

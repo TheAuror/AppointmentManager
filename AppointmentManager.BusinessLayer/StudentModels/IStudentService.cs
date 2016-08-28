@@ -11,7 +11,7 @@ namespace AppointmentManager.BusinessLayer.StudentModels
     public interface IStudentService
     {
         List<StudentModel> GetStudents();
-        void LoadAndSaveStudentsFromFileAsync(string filePath);
+        Task<bool> LoadAndSaveStudentsFromFileAsync(string filePath);
         void SaveStudent(StudentModel student);
         void SaveStudents(List<StudentModel> studentsList);
     }

@@ -22,7 +22,12 @@ namespace AppointmentManager.BusinessLayer.StudentModels
 
         public List<StudentModel> GetStudents()
         {
-            return _sampleContext.Students.Select(e => new StudentModel(e)).ToList();
+            return _sampleContext.Students.Select(e => new StudentModel()
+            {
+                Id = e.Id,
+                Name = e.Name,
+                Course = e.Course
+            }).ToList();
         }
 
         public void SaveStudent(StudentModel student)
@@ -54,12 +59,12 @@ namespace AppointmentManager.BusinessLayer.StudentModels
             }
         }
 
-        public async void LoadAndSaveStudentsFromFileAsync(string filePath)
+        public async Task<bool> LoadAndSaveStudentsFromFileAsync(string filePath)
         {
             List<StudentModel> students = null;
             await Task.Run(() =>
             {
-                using (StreamReader reader = (new StreamReader(filePath, Encoding.GetEncoding("iso-8859-2"))))
+                using (StreamReader reader = (new StreamReader(filePath, Encoding.UTF8)))
                 {
                     var csv = new CsvReader(reader);
                     csv.Configuration.Delimiter = ";";
@@ -68,7 +73,13 @@ namespace AppointmentManager.BusinessLayer.StudentModels
                     students = new List<StudentModel>(csv.GetRecords<StudentModel>().ToList());
                 }
             });
-            if (students != null) SaveStudents(students);
+            if (students != null)
+            {
+                SaveStudents(students);
+                return true;
+            }
+            return false;
         }
     }
 }
+

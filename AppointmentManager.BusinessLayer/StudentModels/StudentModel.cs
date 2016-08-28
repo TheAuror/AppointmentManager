@@ -10,10 +10,7 @@ namespace AppointmentManager.BusinessLayer.StudentModels
         private string _name;
         private string _course;
 
-        public StudentModel()
-        {
-            
-        }
+        public StudentModel(){}
         public StudentModel(StudentEntity studentEntity)
         {
             _id = studentEntity.Id;
