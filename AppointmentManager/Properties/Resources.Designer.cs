@@ -59,5 +59,50 @@ namespace AppointmentManager.PresentationLayer.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to admin.
+        /// </summary>
+        internal static string adminPassword {
+            get {
+                return ResourceManager.GetString("adminPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to admin.
+        /// </summary>
+        internal static string adminUsername {
+            get {
+                return ResourceManager.GetString("adminUsername", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hiba.
+        /// </summary>
+        internal static string LoginForm_ErrorMessage_Title {
+            get {
+                return ResourceManager.GetString("LoginForm_ErrorMessage_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rossz felhasználónév vagy jelszó.
+        /// </summary>
+        internal static string LoginForm_ErrorMessage_WrongUsernameOrPassword {
+            get {
+                return ResourceManager.GetString("LoginForm_ErrorMessage_WrongUsernameOrPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Csv fájlok (.csv)|*.csv|Minden fájl|*.*.
+        /// </summary>
+        internal static string MainForm_OpenFileDialog_CsvFilter {
+            get {
+                return ResourceManager.GetString("MainForm_OpenFileDialog_CsvFilter", resourceCulture);
+            }
+        }
     }
 }

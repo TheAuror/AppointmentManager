@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using Autofac;
+using AppointmentManager.BusinessLayer.StudentModels;
+using Autofac.Core;
 
 namespace AppointmentManager.PresentationLayer
 {
@@ -12,11 +14,15 @@ namespace AppointmentManager.PresentationLayer
         {
             ContainerBuilder builder = new ContainerBuilder();
 
+            builder.RegisterAssemblyModules(typeof(IStudentService).Assembly);
+            builder.Register(context => new MainForm(context.Resolve<IStudentService>())).Named<Form>("MainForm").SingleInstance();
+            builder.RegisterType<LoginForm>().AsSelf().InstancePerLifetimeScope();
+
             Container = builder.Build();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(Container.ResolveNamed<Form>("MainForm"));
         }
     }
 }
