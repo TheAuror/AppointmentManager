@@ -25,7 +25,7 @@ namespace AppointmentManager.PresentationLayer.mdiChildForms.AppointmentListView
         {
             _appointmentListViewModel.LoadAppointments();
             _appointmentListViewModel.LoadStudents();
-            appointmentBindingSource.DataSource = _appointmentListViewModel.AllAppointments.OrderBy(a => a.Appointment);
+            appointmentBindingSource.DataSource = _appointmentListViewModel.AllAppointments.OrderBy(a => a.Appointment).Select(a => a.Appointment > DateTime.Now);
             studentBindingSource.DataSource = _appointmentListViewModel.AllStudents;
             comboBox.SelectedItem = studentBindingSource.DataMember.First();
         }
@@ -34,7 +34,7 @@ namespace AppointmentManager.PresentationLayer.mdiChildForms.AppointmentListView
         {
             var date = dateTimePicker.Value.Date;
             var date2 = date.AddHours((double) numericUpDown.Value);
-            if (_appointmentListViewModel.AllAppointments.Any(d => d.Appointment.Equals(date2)))
+            if (date2 > DateTime.Now && _appointmentListViewModel.AllAppointments.Any(d => d.Appointment.Equals(date2)))
             {
                 return;
             }
@@ -47,7 +47,7 @@ namespace AppointmentManager.PresentationLayer.mdiChildForms.AppointmentListView
             };
             _appointmentListViewModel.SaveAppointment();
             _appointmentListViewModel.LoadAppointments();
-            appointmentBindingSource.DataSource = _appointmentListViewModel.AllAppointments.OrderBy(a => a.Appointment);
+            appointmentBindingSource.DataSource = _appointmentListViewModel.AllAppointments.OrderBy(a => a.Appointment).Select(a => a.Appointment > DateTime.Now);
         }
 
         private void AppointmentListForm_FormClosing(object sender, FormClosingEventArgs e)
