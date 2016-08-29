@@ -45,5 +45,11 @@ namespace AppointmentManager.PresentationLayer
                 e.Cancel = true;
             }
         }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            usernameTextBox.Text = Resources.adminUsername;
+            passwordTextBox.Text = Resources.adminPassword;
+        }
     }
 }

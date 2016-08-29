@@ -19,7 +19,14 @@ namespace AppointmentManager.BusinessLayer.AppointmentModels
 
         public List<AppointmentModel> GetAppointments()
         {
-            return _sampleContext.Appointments.Select(e => new AppointmentModel(e)).ToList();
+            return _sampleContext.Appointments.Select(e => new AppointmentModel()
+            {
+                Id = e.Id,
+                StudentId = e.StudentId,
+                StudentName = e.StudentName,
+                StudentCourse = e.StudentCourse,
+                Appointment = e.Appointment
+            }).ToList();
         }
 
         public void SaveAppointment(AppointmentModel appointment)

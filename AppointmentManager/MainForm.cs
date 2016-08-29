@@ -53,5 +53,16 @@ namespace AppointmentManager.PresentationLayer
                 form.Show();
             }
         }
+
+        private void időpontFoglalásokToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            using (var lifetimeScope = Program.Container.BeginLifetimeScope())
+            {
+                var form = lifetimeScope.ResolveNamed<Form>("AppointmentListForm");
+                form.MdiParent = this;
+                form.WindowState = FormWindowState.Maximized;
+                form.Show();
+            }
+        }
     }
 }

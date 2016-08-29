@@ -25,5 +25,14 @@ namespace AppointmentManager.PresentationLayer.mdiChildForms.StudentListView
             _studentListViewModel.LoadStudents();
             bindingSource.DataSource = _studentListViewModel.AllStudents;
         }
+
+        private void StudentListForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                e.Cancel = true;
+                Hide();
+            }
+        }
     }
 }

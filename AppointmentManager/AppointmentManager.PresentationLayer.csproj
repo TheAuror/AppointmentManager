@@ -74,6 +74,13 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="mdiChildForms\AppointmentListView\AppointmentListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mdiChildForms\AppointmentListView\AppointmentListForm.Designer.cs">
+      <DependentUpon>AppointmentListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mdiChildForms\AppointmentListView\AppointmentListViewModel.cs" />
     <Compile Include="mdiChildForms\StudentListView\StudentListForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +96,9 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="mdiChildForms\AppointmentListView\AppointmentListForm.resx">
+      <DependentUpon>AppointmentListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="mdiChildForms\StudentListView\StudentListForm.resx">
       <DependentUpon>StudentListForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -103,6 +113,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\AppointmentManager.BusinessLayer.AppointmentModels.AppointmentModel.datasource" />
     <None Include="Properties\DataSources\AppointmentManager.BusinessLayer.StudentModels.StudentModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -117,9 +128,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="mdiChildForms\AppointmentListView\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\AppointmentManager.BusinessLayer\AppointmentManager.BusinessLayer.csproj">
       <Project>{61cc1788-dae2-4580-b238-97bc964a8556}</Project>

@@ -92,6 +92,7 @@
             this.Controls.Add(this.dataGridView);
             this.Name = "StudentListForm";
             this.Text = "StudentListForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.StudentListForm_FormClosing);
             this.Load += new System.EventHandler(this.StudentListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();

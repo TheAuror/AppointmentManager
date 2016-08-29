@@ -43,7 +43,7 @@
             this.időpontFoglalásokToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(778, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1101, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -66,12 +66,13 @@
             this.időpontFoglalásokToolStripMenuItem.Name = "időpontFoglalásokToolStripMenuItem";
             this.időpontFoglalásokToolStripMenuItem.Size = new System.Drawing.Size(118, 20);
             this.időpontFoglalásokToolStripMenuItem.Text = "Időpont foglalások";
+            this.időpontFoglalásokToolStripMenuItem.Click += new System.EventHandler(this.időpontFoglalásokToolStripMenuItem_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 528);
+            this.ClientSize = new System.Drawing.Size(1101, 747);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
